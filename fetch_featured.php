@@ -9,11 +9,17 @@ if (!$result) {
 }
 
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<div class='product'>
-            <img src='images/{$row['image']}' alt='{$row['name']}' style='width:100%; height:auto;'>
-            <h4>{$row['name']}</h4>
-            <p>\${$row['price']}</p>
-            <a href='products.php'>Buy Now</a>
+    // Sanitize and format data
+    $id = (int)$row['id'];
+    $name = htmlspecialchars($row['name'], ENT_QUOTES);
+    $price = number_format($row['price'], 2);
+    $image = htmlspecialchars($row['image'], ENT_QUOTES);
+
+    echo "<div class='carousel-item'>
+            <img src='images/{$image}' alt='{$name}' />
+            <h4>{$name}</h4>
+            <p class='price'>₹{$price}</p>
+            <button onclick='addToCart({$id})'>Add to Cart</button>
           </div>";
 }
 ?>
