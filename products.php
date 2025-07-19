@@ -82,7 +82,14 @@ include 'db.php';
       user-select: none;
     }
     
-    
+    main.featured {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: no-repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2.5rem;
+      align-content: start; /* ✅ This keeps cards at natural height */
+    }
     .featured {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
