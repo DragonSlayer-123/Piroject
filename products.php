@@ -239,7 +239,17 @@ include 'db.php';
       ['name' => 'Black Sports Shoes', 'price' => 1999, 'image' => 'black_sports.jpg'],
       ['name' => 'Classic Leather Loafers', 'price' => 2499, 'image' => 'loafers.jpg'],
       ['name' => 'Casual White Sneakers', 'price' => 1799, 'image' => 'sneakers.jpg'],
-      ['name' => 'High-Top Basketball Shoes', 'price' => 2899, 'image' => 'https://i5.walmartimages.com/seo/Kid-s-Basketball-Shoes-Boys-Sneakers-Girls-Trainers-Comfort-High-Top-Basketball-Shoes-for-Boys-Little-Kid-Big-Kid-White-Black_997ad829-1480-4baa-b184-98851ab7935a.4dc81d532dbb9b0b935c839a988458f8.jpeg']
+      ['name' => 'High-Top Basketball Shoes', 'price' => 2899, 'image' => 'https://i5.walmartimages.com/seo/Kid-s-Basketball-Shoes-Boys-Sneakers-Girls-Trainers-Comfort-High-Top-Basketball-Shoes-for-Boys-Little-Kid-Big-Kid-White-Black_997ad829-1480-4baa-b184-98851ab7935a.4dc81d532dbb9b0b935c839a988458f8.jpeg'],
+      ['name' => 'Running Shoes - Red', 'price' => 2099, 'image' => 'running_red.jpg'],
+      ['name' => 'Trail Hiking Boots', 'price' => 3199, 'image' => 'trail_boots.jpg'],
+      ['name' => 'Slip-On Canvas Shoes', 'price' => 1599, 'image' => 'slipon_canvas.jpg'],
+      ['name' => 'Formal Oxford Shoes', 'price' => 2999, 'image' => 'oxford.jpg'],
+      ['name' => 'Kids Light-Up Shoes', 'price' => 1899, 'image' => 'kids_lightup.jpg'],
+      ['name' => 'Chunky Dad Sneakers', 'price' => 2699, 'image' => 'dad_sneakers.jpg'],
+      ['name' => 'Neon Green Trainers', 'price' => 2199, 'image' => 'neon_trainers.jpg'],
+      ['name' => 'Limited Edition Gold High-Tops', 'price' => 3499, 'image' => 'gold_hightops.jpg'],
+      ['name' => 'Winter Fur-lined Boots', 'price' => 2799, 'image' => 'fur_boots.jpg'],
+      ['name' => 'Summer Flip Flops', 'price' => 899, 'image' => 'flipflops.jpg']
     ];
 
     $sql = "SELECT * FROM products";
