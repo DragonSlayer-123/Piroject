@@ -237,6 +237,7 @@ main.page-content {
       <a href="index.php" class="nav-link ">Home</a>
       <a href="products.php" class="nav-link" aria-current="page">Shop</a>
       <a href="cart.php" class="nav-link">Cart</a>
+      <a href="checkout.php" class="nav-link">Checkout</a>
       <a href="login.php" class="nav-link active">Login</a>
       </nav>
       <div class="menu-icon" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0">

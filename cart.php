@@ -300,6 +300,7 @@ input[type="number"] {
       <a href="index.php" class="nav-link ">Home</a>
       <a href="products.php" class="nav-link" aria-current="page">Shop</a>
       <a href="cart.php" class="nav-link active">Cart</a>
+      <a href="checkout.php" class="nav-link">Checkout</a>
       <a href="login.php" class="nav-link">Login</a>
       </nav>
       <div class="menu-icon" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0">
@@ -351,8 +352,8 @@ input[type="number"] {
                 <td data-label="Qty">
                     <input type="number" min="1" class="quantity-input" value="<?= $productQuantity ?>" />
                 </td>
-                <td data-label="Price">₹<?= $productPrice ?></td>
-                <td data-label="Total" class="item-total">₹<?= $productTotal ?></td>
+                <td data-label="Price">रु<?= $productPrice ?></td>
+                <td data-label="Total" class="item-total">रु<?= $productTotal ?></td>
                 <td data-label="Remove">
                     <button class="remove-btn" title="Remove item">&times;</button>
                 </td>
@@ -362,15 +363,15 @@ input[type="number"] {
         <tfoot>
             <tr>
                 <td colspan="3" style="text-align:right">Subtotal:</td>
-                <td id="subtotal" colspan="2">₹<?= number_format($subtotal, 2) ?></td>
+                <td id="subtotal" colspan="2">रु<?= number_format($subtotal, 2) ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="text-align:right">Tax (10%):</td>
-                <td id="tax" colspan="2">₹<?= number_format($subtotal * 0.10, 2) ?></td>
+                <td id="tax" colspan="2">रु<?= number_format($subtotal * 0.10, 2) ?></td>
             </tr>
             <tr>
                 <td colspan="3" style="text-align:right">Grand Total:</td>
-                <td id="grand-total" colspan="2">₹<?= number_format($subtotal * 1.10, 2) ?></td>
+                <td id="grand-total" colspan="2">रु<?= number_format($subtotal * 1.10, 2) ?></td>
             </tr>
             <tr>
             <td colspan="5" style="text-align: right;">
@@ -404,20 +405,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let subtotal = 0;
         cartBody.querySelectorAll('tr').forEach(row => {
             const qtyInput = row.querySelector('.quantity-input');
-            const priceText = row.querySelector('td[data-label="Price"]').textContent.replace('₹','').trim();
+            const priceText = row.querySelector('td[data-label="Price"]').textContent.replace('रु','').trim();
             const totalCell = row.querySelector('.item-total');
 
             const qty = parseInt(qtyInput.value);
             const price = parseFloat(priceText);
             const total = qty * price;
-            totalCell.textContent = `₹${total.toFixed(2)}`;
+            totalCell.textContent = `रु${total.toFixed(2)}`;
             subtotal += total;
         });
 
-        document.getElementById('subtotal').textContent = `₹${subtotal.toFixed(2)}`;
+        document.getElementById('subtotal').textContent = `रु${subtotal.toFixed(2)}`;
         const tax = subtotal * 0.10;
-        document.getElementById('tax').textContent = `₹${tax.toFixed(2)}`;
-        document.getElementById('grand-total').textContent = `₹${(subtotal + tax).toFixed(2)}`;
+        document.getElementById('tax').textContent = `रु${tax.toFixed(2)}`;
+        document.getElementById('grand-total').textContent = `रु${(subtotal + tax).toFixed(2)}`;
     }
 
     function ajaxPost(data) {

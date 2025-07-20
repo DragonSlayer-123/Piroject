@@ -88,7 +88,7 @@
 
     /* HERO */
     .hero {
-      background: url('https://images.unsplash.com/photo-1519741497360-0f9874c5e9ef?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1577208288347-b24488f3efa5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZSUyMGNvbGxlY3Rpb258ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 6rem 2rem;
@@ -286,13 +286,15 @@
   </style>
 </head>
 <body>
+  
   <header>
     <div class="container">
-      <h1>Jutta Sansaar</h1>
+      <h1>👟 Jutta Sansaar</h1>
       <nav id="nav-menu" aria-label="Primary">
         <a href="index.php" class="nav-link active" aria-current="page">Home</a>
         <a href="products.php" class="nav-link">Shop</a>
         <a href="cart.php" class="nav-link">Cart</a>
+        <a href="checkout.php" class="nav-link">Checkout</a>
         <a href="login.php" class="nav-link">Login</a>
       </nav>
       <div class="menu-icon" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0">
@@ -305,6 +307,7 @@
 
   <main>
     <section class="hero" role="banner">
+      
       <h2>Step into Style</h2>
       <p>Find your perfect pair at Jutta Sansaar</p>
       <button class="btn" onclick="location.href='products.php'">Shop Now</button>
@@ -318,17 +321,17 @@
           <?php
             include 'fetch_featured.php'; // This should output product cards with the below structure:
             // For demo, I’ll simulate here 5 products:
-            /*
+            
             echo '
               <div class="carousel-item">
                 <img src="shoe1.jpg" alt="Stylish running shoe">
                 <h4>Running Shoe Pro</h4>
-                <p class="price">₹4999</p>
+                <p class="price">रु4999</p>
                 <button onclick="addToCart(1)">Add to Cart</button>
               </div>
               ... (more items)
             ';
-            */
+            
           ?>
         </div>
         <button class="carousel-btn next" aria-label="Next featured shoe">&#10095;</button>

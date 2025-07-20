@@ -222,6 +222,7 @@ include 'db.php';
       <a href="index.php" class="nav-link ">Home</a>
       <a href="products.php" class="nav-link active" aria-current="page">Shop</a>
       <a href="cart.php" class="nav-link">Cart</a>
+      <a href="checkout.php" class="nav-link">Checkout</a>
       <a href="login.php" class="nav-link">Login</a>
       </nav>
       <div class="menu-icon" id="menu-icon" aria-label="Toggle navigation menu" role="button" tabindex="0">
@@ -277,7 +278,7 @@ include 'db.php';
               <span class='badge'>New</span>
               <img src='{$imgSrc}' alt='{$name}'>
               <h4>{$name}</h4>
-              <p>₹{$price}</p>
+              <p>रु{$price}</p>
               <form method='POST' action='add_to_cart.php'>
                 <input type='hidden' name='product_id' value='{$id}'>
                 <input type='number' name='quantity' value='1' min='1'>
