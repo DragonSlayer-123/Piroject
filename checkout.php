@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = "Error placing order: " . mysqli_error($conn);
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,11 +215,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       background-color: #eb6a48;
     }
 
-    .khalti-button {
-      background: #5c2d91;
-      margin-top: 10px;
-    }
-
     .message {
       text-align: center;
       color: green;
@@ -267,14 +263,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="payment_method">Payment Method</label>
         <select name="payment_method" id="payment_method" required>
           <option value="Cash on Delivery">Cash on Delivery</option>
-          <option value="Khalti">Khalti</option>
         </select>
       </div>
 
       <button type="submit" class="btn">Place Order</button>
-
-      <!-- Khalti Payment Button -->
-      <button type="button" class="btn khalti-button" id="khalti-btn">Pay with Khalti</button>
     </form>
   </div>
 
@@ -282,43 +274,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p>&copy; 2025 Jutta Sansaar. All rights reserved.</p>
   </footer>
 
-  <!-- Khalti Script -->
-  <script src="https://khalti.com/static/khalti-checkout.js"></script>
-  <script>
-    // Hamburger menu toggle
-    const menuIcon = document.getElementById('menu-icon');
-    const navMenu = document.getElementById('nav-menu');
-    menuIcon.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-    menuIcon.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        navMenu.classList.toggle('show');
-      }
-    });
-    var config = {
-        "publicKey": "test_public_key_dc74cfcc2d1e4fd196f1781325a6d8ec", // Replace with live key on production
-        "productIdentity": "1234567890",
-        "productName": "Jutta Order",
-        "productUrl": "http://localhost/products.php",
-        "paymentPreference": ["KHALTI"],
-        "eventHandler": {
-            onSuccess(payload) {
-                alert("Khalti Payment Success!\nTransaction ID: " + payload.idx);
-                // You can use AJAX here to save transaction to DB
-            },
-            onError(error) {
-                alert("Khalti Payment Failed");
-            },
-            onClose() {
-                console.log('widget is closing');
-            }
-        }
-    };
-    var checkout = new KhaltiCheckout(config);
-    document.getElementById("khalti-btn").onclick = function() {
-        checkout.show({amount: 50000}); // In paisa (e.g., Rs. 500)
-    }
-  </script>
+<script>
+  // Hamburger menu toggle
+  const menuIcon = document.getElementById('menu-icon');
+  const navMenu = document.getElementById('nav-menu');
+  menuIcon?.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>

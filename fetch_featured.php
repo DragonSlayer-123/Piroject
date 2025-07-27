@@ -18,7 +18,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "<div class='carousel-item'>
             <img src='images/{$image}' alt='{$name}' />
             <h4>{$name}</h4>
-            <p class='price'>₹{$price}</p>
+            <p class='price'>रु{$price}</p>
             <button onclick='addToCart({$id})'>Add to Cart</button>
           </div>";
 }
