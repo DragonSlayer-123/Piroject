@@ -19,4 +19,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 header("Location: admin.php");
 exit();
-dfghgfyjfhgihihgv
